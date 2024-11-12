@@ -5,10 +5,12 @@ const server = new WebSocket.Server({ port: 8080 });
 server.on("connection", (socket) => {
   console.log("Client connected");
 
-  socket.on("message", (message) => {
-    console.log(`Received: ${message}`);
-
-    socket.send(`Server says: ${message}`);
+  socket.on("message", () => {
+    server.clients.forEach((client) => {
+      if (client.readyState === WebSocket.OPEN) {
+        client.send();
+      }
+    });
   });
 
   socket.on("close", () => {
@@ -16,4 +18,4 @@ server.on("connection", (socket) => {
   });
 });
 
-console.log("WebSocket server is running on ws://localhost:8080");
+console.log("WebSocket server is running");
