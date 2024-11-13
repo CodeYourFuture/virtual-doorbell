@@ -19,7 +19,13 @@ const App = () => {
   return (
     <>
       <h1>Welcome to CYF</h1>
-      <button onClick={ringBell}>Ring bell</button>
+      <img
+        src="/src/assets/bell.png"
+        width="128"
+        height="128"
+        alt="bell"
+        onClick={ringBell}
+      />
     </>
   );
 };
