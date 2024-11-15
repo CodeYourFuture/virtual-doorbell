@@ -1,0 +1,16 @@
+.app {
+  font-size: 7em;
+}
+
+.activate {
+  padding: 2em 5em;
+  border: none;
+  background-color: rgb(6, 185, 6);
+  color: #fff;
+  font-size: 25px;
+}
+
+.message,
+.activate {
+  margin-top: 35vh;
+}

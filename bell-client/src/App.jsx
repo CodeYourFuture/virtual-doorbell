@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./App.css";
 
 const App = () => {
   const [socket, setSocket] = useState(null);
@@ -17,16 +18,16 @@ const App = () => {
   };
 
   return (
-    <>
+    <div className="app">
       <h1>Welcome to CYF</h1>
       <img
         src="/src/assets/bell.png"
-        width="128"
-        height="128"
+        width="256"
+        height="256"
         alt="bell"
         onClick={ringBell}
       />
-    </>
+    </div>
   );
 };
 

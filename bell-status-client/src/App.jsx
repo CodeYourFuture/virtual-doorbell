@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./App.css";
 
 const App = () => {
   const [isAtDoor, setIsAtDoor] = useState(false);
@@ -21,13 +22,15 @@ const App = () => {
   }, [bellStatus, bell]);
 
   return (
-    <>
+    <div className="app">
       {!bellStatus ? (
-        <button onClick={() => setBellStatus(true)}>Activate Bell</button>
+        <button className="activate" onClick={() => setBellStatus(true)}>Activate Bell</button>
       ) : (
-        <p>{isAtDoor ? "Someone is at the door" : "No one is at the door"}</p>
+        <p className="message">
+          {isAtDoor ? "Someone is at the door" : "No one is at the door"}
+        </p>
       )}
-    </>
+    </div>
   );
 };
 
