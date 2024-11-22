@@ -4,7 +4,7 @@ import "./App.css";
 const App = () => {
   const [isAtDoor, setIsAtDoor] = useState(false);
   const [bellStatus, setBellStatus] = useState(false);
-  const [bell] = useState(new Audio("/src/assets/doorbell.mp3"));
+  const [bell] = useState(new Audio("/assets/doorbell.mp3"));
 
   useEffect(() => {
     const ws = new WebSocket("ws://localhost:8080");

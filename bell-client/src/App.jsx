@@ -21,7 +21,7 @@ const App = () => {
     <div className="app">
       <h1>Welcome to CYF</h1>
       <img
-        src="/src/assets/bell.png"
+        src="/assets/bell.png"
         width="256"
         height="256"
         alt="bell"
