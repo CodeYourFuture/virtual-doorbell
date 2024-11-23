@@ -1,0 +1,4 @@
+.github
+server/node_modules
+bell-client/node_modules
+bell-status-client/node_modules
