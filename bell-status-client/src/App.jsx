@@ -16,21 +16,34 @@ const App = () => {
       ws.onmessage = () => {
         bell.play();
         setIsAtDoor(true);
-        setTimeout(() => setIsAtDoor(false), 30000);
       };
     }
   }, [bellStatus, bell]);
 
   return (
-    <div className="app">
+    <>
       {!bellStatus ? (
-        <button className="activate" onClick={() => setBellStatus(true)}>Activate Bell</button>
+        <button className="activate" onClick={() => setBellStatus(true)}>
+          Activate Bell
+        </button>
       ) : (
-        <p className="message">
-          {isAtDoor ? "Someone is at the door" : "No one is at the door"}
-        </p>
+        <div
+          className={`bell-status`}
+          style={{
+            backgroundColor: `${isAtDoor ? "#ebb238" : "#74eb34"}`,
+          }}
+        >
+          <p className="message">
+            {isAtDoor ? "Someone is at the door" : "No one is at the door"}
+          </p>
+          {isAtDoor && (
+            <button className="clear" onClick={() => setIsAtDoor(false)}>
+              Clear
+            </button>
+          )}
+        </div>
       )}
-    </div>
+    </>
   );
 };
 

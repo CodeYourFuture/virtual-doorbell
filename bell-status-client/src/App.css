@@ -1,16 +1,30 @@
-.app {
+.bell-status {
   font-size: 7em;
+  height: 100vh;
 }
 
-.activate {
+.activate,
+.clear {
   padding: 2em 5em;
   border: none;
-  background-color: rgb(6, 185, 6);
-  color: #fff;
   font-size: 25px;
 }
 
-.message,
+.activate {
+  background-color: rgb(6, 185, 6);
+  color: #fff;
+}
+
+.clear {
+  background-color: #000;
+  color: #fff;
+  margin-top: 7em;
+}
+
 .activate {
   margin-top: 35vh;
+}
+
+.message {
+  padding-top: 35vh;
 }
