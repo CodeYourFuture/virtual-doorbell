@@ -52,7 +52,7 @@ jobs:
         with:
           group: ${{ secrets.K8S_SECURITY_GROUP }}
           port: ${{ secrets.K8S_MASTER_PORT }}
-          region: ${{ inputs.region }}
+          region: ${{ secrets.AWS_REGION }}
       - name: Get config and set KUBECONFIG
         uses: CodeYourFuture/actions/.github/actions/get-kubeconfig@main
         id: get-kubeconfig
