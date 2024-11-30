@@ -23,13 +23,14 @@ jobs:
       - name: AWS ECR Login
         uses: aws-actions/amazon-ecr-login@v2
       - name: Build image
+        run: |
+          docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
+          docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
         env:
           REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           REPOSITORY: ${{ secrets.REPOSITORY }}
           IMAGE_TAG: ${{ github.sha }}
-        run: |
-          docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG .
-          docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
+        
 
   # Update Kubernetes
   Deploy:
